@@ -4,22 +4,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-//import javax.persistence.OneToMany;
 
 @Entity
-public class Cidade {
+public class Endereco {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String nome;
-	private String abreviacao;
-	
-	//@OneToMany(mappedBy = "entrega", cascade = CascadeType.ALL)
-	//List
-	
-	@ManyToOne
+	private Cidade cidade;
 	private Estado estado;
+	private Pais pais;
+	private String rua;
+	private String numero;
+	private String complemento;
 
 }

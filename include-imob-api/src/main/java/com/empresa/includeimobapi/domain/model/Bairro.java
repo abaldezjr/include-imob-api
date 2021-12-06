@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,10 +20,8 @@ public class Bairro {
 	@Column(name = "NOME")
 	private String nome;
 	
-	@Column(name = "ABREVIACAO")
-	private String abreviacao;
-	
-	@Column(name = "QTD_QUARTO")
+	@ManyToOne
+	@Column(name = "ID_CIDADE")
 	private Cidade cidade;
 
 }

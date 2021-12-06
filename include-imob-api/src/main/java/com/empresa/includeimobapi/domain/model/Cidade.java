@@ -25,6 +25,7 @@ public class Cidade {
 	private String abreviacao;
 	
 	@ManyToOne
+	@Column(name = "ID_ESTADO")
 	private Estado estado;
 
 }

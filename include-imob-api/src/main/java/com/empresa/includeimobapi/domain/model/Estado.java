@@ -22,7 +22,7 @@ public class Estado {
 	@Column(name = "ABREVIACAO")
 	private String abreviacao;
 	
-	@Column(name = "PAIS")
+	@Column(name = "ID_PAIS")
 	private Pais pais;
 
 }

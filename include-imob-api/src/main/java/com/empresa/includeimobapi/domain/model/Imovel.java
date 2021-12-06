@@ -9,10 +9,10 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.empresa.includeimobapi.domain.model.enuns.TipoImovel;
 
 @Entity
 @Table(name = "TB_IMOVEL")
@@ -25,9 +25,26 @@ public class Imovel implements Serializable {
 	@Column(name = "ID_IMOVEL")
 	private Long id;
 	
-	@Column(name = "ID_ENDERECO")
-	@OneToOne
-	private Endereco endereco;
+	@Column(name = "ID_CIDADE")
+	@ManyToOne
+	private Cidade cidade;
+	
+	@Column(name = "ID_ESTADO")
+	@ManyToOne
+	private Estado estado;
+	
+	@Column(name = "ID_PAIS")
+	@ManyToOne
+	private Pais pais;
+	
+	@Column(name = "RUA")
+	private String rua;
+	
+	@Column(name = "NUMERO")
+	private String numero;
+	
+	@Column(name = "COMPLEMENTO")
+	private String complemento;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "TIPO_IMOVEL")

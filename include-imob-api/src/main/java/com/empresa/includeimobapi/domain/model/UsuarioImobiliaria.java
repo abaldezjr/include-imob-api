@@ -1,7 +1,5 @@
 package com.empresa.includeimobapi.domain.model;
 
-import java.time.OffsetDateTime;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,28 +7,27 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import lombok.Data;
 
 @Data
 @Entity
-public class Imobiliaria {
+@Table(name = "TB_USUARIO_IMOBILIARIA")
+public class UsuarioImobiliaria {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID_IMOBILIARIA")
+	@Column(name = "ID_USUARIO_IMOBILIARIA")
 	private Long id;
-	
-	@Column(name = "DATA_CRIACAO")
-	private OffsetDateTime dataCriacao;
-	
-	@Column(name = "DATA_ATUALIZACAO")
-	private OffsetDateTime dataAtualizacao;
-	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ID_USUARIO_CRIADOR")
+		
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ID_USUARIO")
 	private Usuario usuario;
 	
-	@Column(name = "NOME")
-	private String nome;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ID_IMOBILIARIA")
+	private Imobiliaria imobiliaria;
+
 }

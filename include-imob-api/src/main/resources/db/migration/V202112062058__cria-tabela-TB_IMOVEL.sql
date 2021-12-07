@@ -1,5 +1,8 @@
 create table TB_IMOVEL (
 	ID_IMOVEL bigint not null auto_increment,
+	DATA_CRIACAO DATETIME NOT NULL DEFAULT current_timestamp,
+	DATA_ATUALIZACAO DATETIME,
+	ID_USUARIO bigint not null,
 	ID_CIDADE bigint not null,
     RUA varchar(60) not null,
     NUMERO varchar(60) not null,
@@ -15,3 +18,6 @@ create table TB_IMOVEL (
 
 alter table TB_IMOVEL add constraint FK_IMOVEL_CIDADE
 foreign key(ID_CIDADE) references TB_CIDADE (ID_CIDADE);
+
+alter table TB_IMOVEL add constraint FK_IMOVEL_USUARIO
+foreign key(ID_USUARIO) references TB_USUARIO (ID_USUARIO);

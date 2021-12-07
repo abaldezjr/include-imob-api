@@ -2,9 +2,12 @@ package com.empresa.includeimobapi.domain.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -22,7 +25,8 @@ public class Estado {
 	@Column(name = "ABREVIACAO")
 	private String abreviacao;
 	
-	@Column(name = "ID_PAIS")
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ID_PAIS")
 	private Pais pais;
 
 }

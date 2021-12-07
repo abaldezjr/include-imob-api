@@ -6,11 +6,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,17 +25,9 @@ public class Imovel implements Serializable {
 	@Column(name = "ID_IMOVEL")
 	private Long id;
 	
-	@Column(name = "ID_CIDADE")
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ID_CIDADE")
 	private Cidade cidade;
-	
-	@Column(name = "ID_ESTADO")
-	@ManyToOne
-	private Estado estado;
-	
-	@Column(name = "ID_PAIS")
-	@ManyToOne
-	private Pais pais;
 	
 	@Column(name = "RUA")
 	private String rua;

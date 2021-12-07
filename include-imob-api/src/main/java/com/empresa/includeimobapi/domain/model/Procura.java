@@ -4,10 +4,12 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,8 +23,12 @@ public class Procura implements Serializable {
 	private Long id;
 	
 	@Column(name = "ID_IMOVEL")
-	@OneToOne
+	@ManyToOne
 	private Imovel imovel;
+	
+	@Enumerated(EnumType.STRING)
+	@Column(name = "TIPO_PROCURA")
+	private TipoNegocio tipoProcura;
 	
 	@Column(name = "VALOR_MINIMO")
 	private Double valorMinimo;

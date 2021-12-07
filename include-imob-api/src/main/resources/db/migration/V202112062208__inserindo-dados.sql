@@ -1,0 +1,2 @@
+insert INTO tb_pais (NOME, ABREVIACAO) VALUES ('Brasil', 'BR');
+INSERT INTO TB_ESTADO (NOME, ABREVIACAO, ID_PAIS) VALUES ('Rio Grande do Sul', 'RS', (select p.Id_PAIS from TB_PAIS p where Nome = 'Brasil'));

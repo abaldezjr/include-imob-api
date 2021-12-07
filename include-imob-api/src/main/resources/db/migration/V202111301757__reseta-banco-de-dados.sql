@@ -1,0 +1,2 @@
+-- Para atualizar dados default do banco de dados, descomentar linha abaixo.
+-- DELETE FROM flyway_schema_history WHERE 1=0 and description in ('deletando-dados-tabelas', 'inserindo-dados');

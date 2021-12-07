@@ -1,6 +1,7 @@
 package com.empresa.includeimobapi.domain.model;
 
 import java.io.Serializable;
+import java.time.OffsetDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,6 +26,12 @@ public class Imovel implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_IMOVEL")
 	private Long id;
+	
+	@Column(name = "DATA_CRIACAO")
+	private OffsetDateTime dataCriacao;
+	
+	@Column(name = "DATA_ATUALIZACAO")
+	private OffsetDateTime dataAtualizacao;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_CIDADE")

@@ -4,5 +4,6 @@ create table TB_USUARIO (
 	DATA_ATUALIZACAO DATETIME,
 	EMAIL varchar(255) not null,
 	NOME varchar(60) not null,
+	TIPO_USUARIO varchar(60) not null,
 	primary key(ID_USUARIO)
 );

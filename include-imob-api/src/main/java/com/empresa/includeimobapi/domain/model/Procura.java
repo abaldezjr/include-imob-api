@@ -1,6 +1,7 @@
 package com.empresa.includeimobapi.domain.model;
 
 import java.io.Serializable;
+import java.time.OffsetDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,6 +25,12 @@ public class Procura implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(name = "DATA_CRIACAO")
+	private OffsetDateTime dataCriacao;
+	
+	@Column(name = "DATA_ATUALIZACAO")
+	private OffsetDateTime dataAtualizacao;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_IMOVEL")

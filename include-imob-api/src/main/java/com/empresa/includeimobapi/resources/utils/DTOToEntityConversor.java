@@ -3,9 +3,12 @@ package com.empresa.includeimobapi.resources.utils;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.empresa.includeimobapi.domain.model.Usuario;
 import com.empresa.includeimobapi.resources.dto.UsuarioDTO;
 
+@Component
 public class DTOToEntityConversor {
 	
 	public Usuario convertUsuarioDtoToEntity(UsuarioDTO usuarioDto) {

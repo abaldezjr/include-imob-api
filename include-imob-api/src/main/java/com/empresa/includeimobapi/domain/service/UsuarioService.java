@@ -16,7 +16,7 @@ public class UsuarioService {
 	private UsuarioRepository usuarioRepository;
 	
 	@Autowired
-	DTOToEntityConversor dtoToEntityConversor;
+	private DTOToEntityConversor dtoToEntityConversor;
 
 	public List<UsuarioDTO> findAll() {
 		return dtoToEntityConversor.convertListUsuarioEntityToDTO(usuarioRepository.findAll());

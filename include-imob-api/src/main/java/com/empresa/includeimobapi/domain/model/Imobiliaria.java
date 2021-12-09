@@ -28,7 +28,7 @@ public class Imobiliaria {
 	private OffsetDateTime dataAtualizacao;
 	
 	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ID_USUARIO_CRIADOR")
+	@JoinColumn(name = "ID_PROPRIETARIO")
 	private Usuario usuario;
 	
 	@Column(name = "NOME")

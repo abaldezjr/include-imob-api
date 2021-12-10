@@ -5,8 +5,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import com.empresa.includeimobapi.domain.model.Cliente;
 import com.empresa.includeimobapi.domain.model.Imobiliaria;
 import com.empresa.includeimobapi.domain.model.Usuario;
+import com.empresa.includeimobapi.resources.dto.ClienteDTO;
 import com.empresa.includeimobapi.resources.dto.ImobiliariaDTO;
 import com.empresa.includeimobapi.resources.dto.UsuarioDTO;
 
@@ -88,6 +90,31 @@ public class DTOToEntityConversor {
 			imobiliariasDto.add(convertImobiliariaEntityToDTO(i));
 		}
 		return imobiliariasDto;
+	}
+
+	public List<ClienteDTO> convertListClienteEntityToDTO(List<Cliente> clientes) {
+		List<ClienteDTO> clientesDto = new ArrayList<>();
+		for(Cliente c: clientes) {
+			clientesDto.add(convertClienteEntityToDTO(c));
+		}
+		return clientesDto;
+	}
+
+	private ClienteDTO convertClienteEntityToDTO(Cliente cliente) {
+		ClienteDTO clienteDto = new ClienteDTO();
+		if(!Utils.isNullOrEmpty(cliente)) {
+			if(!Utils.isNullOrEmpty(cliente.getId())) {
+				clienteDto.setId(cliente.getId());
+			}
+			if(!Utils.isNullOrEmpty(cliente.getNome())) {
+				clienteDto.setNome(cliente.getNome());
+			}
+			
+			if(!Utils.isNullOrEmpty(cliente.getEmail())) {
+				clienteDto.setEmail(cliente.getEmail());
+			}	
+		}
+		return clienteDto;
 	}
 	
 //	public List<UsuarioDTO> convertListUsuarioEntityToDTO2(List<Usuario> usuarios) {

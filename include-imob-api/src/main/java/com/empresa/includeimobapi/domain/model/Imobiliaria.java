@@ -16,23 +16,23 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="TB_IMOBILIARIA")
+@Table(name = "TB_IMOBILIARIA")
 public class Imobiliaria {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_IMOBILIARIA")
 	private Long id;
-	
+
 	@Column(name = "DATA_CRIACAO")
 	private OffsetDateTime dataCriacao;
-	
+
 	@Column(name = "DATA_ATUALIZACAO")
 	private OffsetDateTime dataAtualizacao;
-	
+
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_PROPRIETARIO")
 	private Usuario usuario;
-	
+
 	@Column(name = "NOME")
 	private String nome;
 }

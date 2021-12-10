@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "1f4d0c3c-4272-4306-98df-77b83092e814",
+		"_postman_id": "f32f6235-0846-4529-85d1-ab7f64a8f30e",
 		"name": "Imobiliaria",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -38,6 +38,25 @@
 					"port": "8080",
 					"path": [
 						"imobiliarias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes"
 					]
 				}
 			},

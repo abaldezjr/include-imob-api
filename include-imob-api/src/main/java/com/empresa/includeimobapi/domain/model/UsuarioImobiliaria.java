@@ -16,16 +16,16 @@ import lombok.Data;
 @Entity
 @Table(name = "TB_USUARIO_IMOBILIARIA")
 public class UsuarioImobiliaria {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_USUARIO_IMOBILIARIA")
 	private Long id;
-		
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_USUARIO")
 	private Usuario usuario;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_IMOBILIARIA")
 	private Imobiliaria imobiliaria;

@@ -13,10 +13,10 @@ import com.empresa.includeimobapi.resources.dto.ImobiliariaDTO;
 @RestController
 @RequestMapping("/imobiliarias")
 public class ImobiliariaController {
-	
+
 	@Autowired
 	private ImobiliariaService imobiliariaService;
-	
+
 	@GetMapping
 	public List<ImobiliariaDTO> findAll() {
 		return imobiliariaService.findAll();

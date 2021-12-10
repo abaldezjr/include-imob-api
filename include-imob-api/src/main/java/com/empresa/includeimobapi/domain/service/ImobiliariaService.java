@@ -11,10 +11,10 @@ import com.empresa.includeimobapi.resources.utils.DTOToEntityConversor;
 
 @Service
 public class ImobiliariaService {
-	
+
 	@Autowired
 	private ImobiliariaDAO imobiliariaRepository;
-	
+
 	@Autowired
 	private DTOToEntityConversor dtoToEntityConversor;
 

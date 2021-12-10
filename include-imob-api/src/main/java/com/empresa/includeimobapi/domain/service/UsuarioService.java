@@ -11,15 +11,15 @@ import com.empresa.includeimobapi.resources.utils.DTOToEntityConversor;
 
 @Service
 public class UsuarioService {
-	
+
 	@Autowired
 	private UsuarioDAO usuarioRepository;
-	
+
 	@Autowired
 	private DTOToEntityConversor dtoToEntityConversor;
 
 	public List<UsuarioDTO> findAll() {
 		return dtoToEntityConversor.convertListUsuarioEntityToDTO(usuarioRepository.findAll());
 	}
-	
+
 }

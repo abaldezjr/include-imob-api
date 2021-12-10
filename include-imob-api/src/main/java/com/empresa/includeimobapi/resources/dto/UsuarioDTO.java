@@ -11,7 +11,7 @@ import lombok.Data;
 @JsonInclude(Include.NON_EMPTY)
 @Data
 public class UsuarioDTO {
-	
+
 	private Long id;
 	private OffsetDateTime dataCriacao;
 	private OffsetDateTime dataAtualizacao;

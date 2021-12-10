@@ -5,21 +5,21 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.empresa.includeimobapi.domain.repository.UsuarioDAO;
-import com.empresa.includeimobapi.resources.dto.UsuarioDTO;
+import com.empresa.includeimobapi.domain.repository.ImobiliariaDAO;
+import com.empresa.includeimobapi.resources.dto.ImobiliariaDTO;
 import com.empresa.includeimobapi.resources.utils.DTOToEntityConversor;
 
 @Service
-public class UsuarioService {
+public class ImobiliariaService {
 	
 	@Autowired
-	private UsuarioDAO usuarioRepository;
+	private ImobiliariaDAO imobiliariaRepository;
 	
 	@Autowired
 	private DTOToEntityConversor dtoToEntityConversor;
 
-	public List<UsuarioDTO> findAll() {
-		return dtoToEntityConversor.convertListUsuarioEntityToDTO(usuarioRepository.findAll());
+	public List<ImobiliariaDTO> findAll() {
+		return dtoToEntityConversor.convertListImobiliariaEntityToDTO(imobiliariaRepository.findAll());
 	}
-	
+
 }

@@ -5,7 +5,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import com.empresa.includeimobapi.domain.model.Imobiliaria;
 import com.empresa.includeimobapi.domain.model.Usuario;
+import com.empresa.includeimobapi.resources.dto.ImobiliariaDTO;
 import com.empresa.includeimobapi.resources.dto.UsuarioDTO;
 
 @Component
@@ -13,6 +15,20 @@ public class DTOToEntityConversor {
 	
 	public Usuario convertUsuarioDtoToEntity(UsuarioDTO usuarioDto) {
 		Usuario usuario = new Usuario();
+		/*if(!Utils.isNullOrEmpty(usuario)) {
+			if(!Utils.isNullOrEmpty(usuarioDto.getId())) {
+				usuario.setId(usuarioDto.getId());
+			}
+			if(!Utils.isNullOrEmpty(usuarioDto.getEmail())) {
+				usuario.setEmail(usuarioDto.getEmail());
+			}
+			if(!Utils.isNullOrEmpty(usuarioDto.getNome())) {
+				usuario.setNome(usuarioDto.getNome());
+			}
+			if(!Utils.isNullOrEmpty(usuarioDto.getTipoUsuario())) {
+				usuario.setTipoUsuario(usuarioDto.getTipoUsuario());
+			}
+		}*/
 		
 		return usuario;
 	}
@@ -43,6 +59,42 @@ public class DTOToEntityConversor {
 		}
 		return usuariosDto;
 	}
+	
+	public Imobiliaria convertImobiliariaDtoToEntity(ImobiliariaDTO imobiliariaDto) {
+		return null;
+	}
+	
+	public ImobiliariaDTO convertImobiliariaEntityToDTO(Imobiliaria imobiliaria) {
+		ImobiliariaDTO imobiliariaDto = new ImobiliariaDTO();
+		if(!Utils.isNullOrEmpty(imobiliaria)) {
+			if(!Utils.isNullOrEmpty(imobiliaria.getId())) {
+				imobiliariaDto.setId(imobiliaria.getId());
+			}
+			
+			if(!Utils.isNullOrEmpty(imobiliaria.getNome())) {
+				imobiliariaDto.setNome(imobiliaria.getNome());
+			}
+			
+			if(!Utils.isNullOrEmpty(imobiliaria.getUsuario())) {
+				imobiliariaDto.setIdUsuario(imobiliaria.getUsuario().getId());
+			}	
+		}
+		return imobiliariaDto;
+	}
+
+	public List<ImobiliariaDTO> convertListImobiliariaEntityToDTO(List<Imobiliaria> imobiliarias) {
+		List<ImobiliariaDTO> imobiliariasDto = new ArrayList<>();
+		for(Imobiliaria i: imobiliarias) {
+			imobiliariasDto.add(convertImobiliariaEntityToDTO(i));
+		}
+		return imobiliariasDto;
+	}
+	
+//	public List<UsuarioDTO> convertListUsuarioEntityToDTO2(List<Usuario> usuarios) {
+//		return usuarios.stream()
+//				.map(this::convertUsuarioEntityToDTO)
+//				.collect(Collectors.toList());
+//	}
 			
 
 }
